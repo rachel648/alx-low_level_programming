@@ -1,34 +1,32 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
- * main - prints all possible different combinations of three digits
- * using the smallest combination of three digits
- *
- * Return: 0 if program completes successfully
+ * main -> assign a random number to the variable n each time it's executed
+ * and print the last digit of the number stored in the variables n
+ * Return: always 0
  */
 int main(void)
 {
-int i, j, k;
-
-for (i = 0; i < 8; i++)
+int ch;
+int n;
+for (ch = 48; ch <= 57; ch++)
 {
-for (j = i + 1; j < 9; j++)
+for (n = 49; n <= 57; n++)
 {
-for (k = j + 1; k <= 9; k++)
+if (n > ch)
 {
-putchar(i + '0');
-putchar(j + '0');
-putchar(k + '0');
-
-if (i != 7 || j != 8 || k != 9)
+putchar(ch);
+putchar(n);
+if (ch != 56 || n != 57)
 {
-putchar(',');
-putchar(' ');
+putchar(44);
+putchar(32);
 }
 }
 }
 }
-printf("\n");
-
+putchar(10);
 return (0);
 }
